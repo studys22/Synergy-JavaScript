@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Задание 2</title>
+</head>
+
+<body>
+</body>
+<script>
+  
+  function defaultEmployees() {
+    return [
+      { "LastName": "Блантер", "FirstName": "Валерий" },
+      { "LastName": "Новолодский", "FirstName": "Виталий" },
+      { "LastName": "Гарифуллин", "FirstName": "Яков" },
+      { "LastName": "Помельников", "FirstName": "Роман" },
+      { "LastName": "Быстров", "FirstName": "Дмитрий" }
+    ];
+  }
+
+  async function getEmployees() {
+    url = 'https://api.randomdatatools.ru/?count=6&params=LastName,FirstName';
+    let employees;
+    try {
+      let response = await fetch(url);
+      if (response.ok) {
+        employees = await response.json();
+      } else {
+        employees = defaultEmployees();
+      }
+    } catch {
+      employees = defaultEmployees();
+    }
+    return employees;
+  }
+
+  async function createList() {
+    let employees = await getEmployees();
+    const ol = document.createElement('ol');
+    document.body.appendChild(ol);
+    employees.forEach(employee => {
+      const li = document.createElement('li');
+      li.innerText = `${employee.LastName} ${employee.FirstName}`;
+      ol.appendChild(li);
+    });
+  }
+
+  createList();
+
+</script>
+
+</html>
