@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(223, 223, 223);
+}
+
+#content {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+#noteText {
+    resize: none;
+    margin-bottom: 10px;
+    height: 150px;
+}
+
+.noteButtons {
+    display: flex;
+}
+
+.buttonsNote {
+    display: flex;
+}
+
+#listNotes {
+    margin-top: 30px;
+}
+
+.note {
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.show {
+    transition: opacity 0.6s ease-in;
+    opacity: 1;
+}
+
+.beingEdited {
+    background-color: rgb(172, 172, 172);
+}
+
+.display-button {
+    display: inline;
+}
+
+.hide-button {
+    display: none;
+}
+
+.textNote {
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+}

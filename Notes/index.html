@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Заметки</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="notes.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="content">
+
+        <div id="currentNote" class="card">
+            <div class="card-body">
+                <div id="note" class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="noteText"></textarea>
+                    <label id="currentNoteLabel" for="noteText">Новая заметка</label>
+                </div>
+                <div id="noteButtons1" class="btn-group noteButtons" role="group">
+                    <button class="display-button btn btn-success" id="create" onclick="createClick()">Создать</button>
+                </div>
+                <div id="noteButtons2" class="btn-group noteButtons" role="group">
+                    <button class="hide-button btn btn-success" id="save" onclick="saveClick()">Сохранить</button>
+                    <button class="hide-button btn btn-secondary" id="cancel" onclick="cancelClick()">Отменить</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="listNotes" class="">
+            <h5 class="card card-body" id="listHead">Всего заметок:</h5>
+        </div>
+    </div>
+</body>
+<script src="notes.js"></script>
+
+</html>
